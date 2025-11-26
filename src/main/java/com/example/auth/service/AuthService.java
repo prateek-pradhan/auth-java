@@ -59,7 +59,7 @@ public class AuthService {
             throw new RuntimeException("User with email " + registerRequest.getEmail() + " already exists");
         }
         else if (userRepository.existsByUsername(registerRequest.getUsername())) {
-            throw new RuntimeException("User with email " + registerRequest.getEmail() + " already exists");
+            throw new RuntimeException("User with username " + registerRequest.getUsername() + " already exists");
         }
         else if (!passwordService.isPasswordStrong(registerRequest.getPassword())) {
             throw new RuntimeException("Password not strong enough");
